@@ -5,3 +5,7 @@ AU = 1.496e11       # au (m)
 RS = 695508e3       # Sun radius (m)
 RE = 6.3710e6       # Earth radius (m)
 RJ = 69.911e6       # Jupiter radius (m)
+PC = 3.087e16       # Parsec (m)
+
+sig = 5.6704e-5     # erg /s / cm62 / K64
+LS = 3.8270e33      # erg/s

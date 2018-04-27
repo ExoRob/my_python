@@ -1,3 +1,5 @@
+import numpy as np
+
 def phase_fold(in_time, in_flux, period, tt0):
     foldtimes = ((in_time-tt0+period/2.0) / period) % 1
     
@@ -34,3 +36,11 @@ def running_sigma_clip(data, ax, ef, usig=3, lsig=10, binsize=10):
         i = i + 1
     
     return data_clipped, ax_clipped, err
+
+
+def calc_i(_a, _b):
+    return np.degrees(np.arccos(_b / _a))
+
+def calc_b(_a, _i):
+    return _a * np.cos(np.radians(_i))
+
