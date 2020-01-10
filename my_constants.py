@@ -9,3 +9,4 @@ PC = 3.087e16       # Parsec (m)
 
 sig = 5.6704e-5     # erg /s / cm62 / K64
 LS = 3.8270e33      # erg/s
+G = 6.67408e-11     # m3 / kg / s2
