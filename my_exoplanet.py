@@ -72,3 +72,30 @@ def calc_i(_a, _b):
 def calc_b(_a, _i):
     return _a * np.cos(np.radians(_i))
 
+
+def hms2dec(coord, c):
+    try:
+        coord = str(coord)      # RA/Dec coordinate string
+
+        nsep = coord.count(":")     # if no hours given     TODO: remove if fixed
+        if nsep == 1:
+            coord = "00:" + coord
+
+        if coord[0] == "-":     # if negative (Dec)
+            sign = -1.
+            coord = coord[1:]
+        else:
+            sign = 1.
+
+        h, m, s = coord.split(":")      # split into hours, minutes, seconds
+
+        deg = float(h) + float(m) / 60. + float(s) / 3600.  # convert to decimal degrees
+        if c == "ra":
+            return sign * deg / 24. * 360.
+
+        else:
+            return sign * deg
+
+    except:     # if unknown coordinate         TODO: return error trace?
+        return "nan"
+
